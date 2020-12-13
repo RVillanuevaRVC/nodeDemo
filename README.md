@@ -6,3 +6,8 @@ https://dev.to/mornir/create-a-service-account-to-authenticate-with-google-5b1k
 https://cloud.google.com/docs/authentication/getting-started#auth-cloud-implicit-nodejs
 https://github.com/extrabacon/google-oauth-jwt
 
+
+
+
+
+https://www.derpturkey.com/service-to-service-google-api-calls-with-node/
