@@ -44,3 +44,7 @@ function storeFiles(auth) {
     }
  });
   }
+  
+  
+  
+  https://stackoverflow.com/questions/51870427/how-to-upload-images-to-google-drive-from-nodejs-api
