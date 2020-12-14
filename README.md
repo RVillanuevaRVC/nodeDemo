@@ -12,3 +12,5 @@ https://github.com/extrabacon/google-oauth-jwt
 
 https://www.derpturkey.com/service-to-service-google-api-calls-with-node/
 https://flaviocopes.com/google-api-authentication/
+
+https://github.com/extrabacon/google-oauth-jwt
