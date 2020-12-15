@@ -1,13 +1,47 @@
+//refer to https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
+
 var express = require('express');
 var app = express();
 
 app.use(express.static('public'));
+var bodyParser = require('body-parser');
+// Create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false }) ;
 
 
 app.get('/', function (req, res) 
 {
    res.send('Hello World');
 }) ;
+
+
+app.get('/index.htm', function (req, res) 
+{
+   res.sendFile( __dirname + "/" + "index.htm" );
+});
+
+
+app.get('/process_get', function (req, res) 
+{
+   // Prepare output in JSON format
+   response = {
+      first_name:req.query.first_name,
+      last_name:req.query.last_name
+   };
+   console.log(response);
+   res.end(JSON.stringify(response));
+}) ;
+
+app.post('/process_post', urlencodedParser, function (req, res) 
+{
+   // Prepare output in JSON format
+   response = {
+      first_name:req.body.first_name,
+      last_name:req.body.last_name
+   };
+   console.log(response);
+   res.end(JSON.stringify(response));
+})
 
 
 // This responds a POST request for the homepage
