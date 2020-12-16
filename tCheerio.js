@@ -58,3 +58,5 @@ $() 方法是在DOM中使用过于频繁的 document.getElementById() 方法的�
 
 */
 //refer to https://cheerio.js.org/
+//https://slacker.ro/2020/02/09/web-scraping-and-parsing-html-with-node-js-and-cheerio/
+
