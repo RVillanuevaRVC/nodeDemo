@@ -59,4 +59,139 @@ $() 方法是在DOM中使用过于频繁的 document.getElementById() 方法的�
 */
 //refer to https://cheerio.js.org/
 //https://slacker.ro/2020/02/09/web-scraping-and-parsing-html-with-node-js-and-cheerio/
+//http://zetcode.com/javascript/cheerio/
 
+const request= require("request-promise")
+const cheerio= require("cheerio");
+
+/*
+//code below works fine with the URI given
+request("https://www.bullion-rates.com/gold/INR/2007-1-history.htm", 
+    (error, response, html) => 
+    {
+        if(!error && response.statusCode==200) 
+        {
+            const $= cheerio.load(html);
+
+
+
+
+
+            
+            
+            //const output= datarow.find("th").text();
+
+            //console.log(output) ;
+
+            
+            
+            //$(".DataRow").each((i, data) => {
+            //    const item= $(data).text();
+            //    const item1= $(data).text();
+            //    const item2= $(data).text();
+
+            //    console.log(item, item1, item2);
+            //}) ;
+            
+        }
+    }
+);
+*/
+
+
+//yahoo finance Company Profile--cash flow
+//https://finance.yahoo.com/quote/BAM/cash-flow?p=BAM
+
+
+//sina finance Compnay Profile--cash flow
+//https://quotes.sina.com.cn/usstock/hq/cash.php?s=bam&t=annual
+
+
+//code below not working...
+request("https://quotes.sina.com.cn/usstock/hq/cash.php?s=bam&t=annual", 
+    (error, response, html) => 
+    {
+        if(!error && response.statusCode==200) 
+        {
+            
+            const $= cheerio.load(html);
+            
+            //let title = $('title');
+            //console.log(title.text());
+            //let idClose = $('#tip_mk_close') ;
+            //console.log(idClose) ;
+            //body > div.wrap > div.news.keyratios > div.tbl_wrap > table:nth-child(5) > tbody
+            //let varBody = $('body') ;
+            //let varDivwrap 
+            //let datatbl= $('data_tbl os_tbl');
+            //console.log(datatbl.get(0)) ;
+            //body > div.wrap > div.news.keyratios > div.tbl_wrap > table:nth-child(5) > tbody > tr:nth-child(5) > td:nth-child(2)
+            //body > div.wrap > div.news.keyratios > div.tbl_wrap > table:nth-child(5) > tbody
+            //let varDivTblWrap = $('body > div.wrap > div.news.keyratios > div.tbl_wrap') ;
+            //console.log(varDivTblWrap) ;
+            let varTblBody = $('body > div.wrap > div.news.keyratios > div.tbl_wrap > table:nth-child(5) > tbody') ;
+            //console.log(varTblBody) ;
+            let varRecord = varTblBody.children().first() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+        }
+    }
+);
+
+
+/*
+//https://www.codingwithstefan.com/table-example/
+//https://medium.com/@stefanhyltoft/scraping-html-tables-with-nodejs-request-and-cheerio-e3c6334f661b
+
+//code below works for the table
+request("https://www.codingwithstefan.com/table-example/", 
+    (error, response, html) => 
+    {
+        if(!error && response.statusCode==200) 
+        {
+            const $= cheerio.load(html);
+            let varTbl = $('table') ;
+            //console.log(varTbl) ;
+            let varTblBody = varTbl.children('tbody') ;
+            //console.log(varTblBody) ;
+
+            //vatTblBody.children
+            let varRecord = varTblBody.children().first() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+
+            varRecord = varRecord.next() ;
+            console.log(varRecord.get(0).tagName);
+            console.log(varRecord.text()) ;
+        }
+    }
+);
+*/
