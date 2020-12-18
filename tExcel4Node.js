@@ -1,5 +1,7 @@
 //refer https://github.com/natergj/excel4node
 
+//code below works fine for to crate a xlst file given data
+/*
 //sample from the node project
 // Require library
 var xl = require('excel4node');
@@ -47,7 +49,9 @@ ws.cell(3, 1)
   .style({font: {size: 14}});
 
 wb.write('Excel.xlsx');
+*/
 
+//code below works fine to write array of JSON object into a new excel file
 //another example: How to save JSON data in EXCEL file using Node.js
 //https://dev.to/shadabshaikh0/how-to-save-json-data-in-excel-file-in-node-js-1cfn
 const xl = require('excel4node');
@@ -59,7 +63,17 @@ const data = [
     "name":"Shadab Shaikh",
     "email":"shadab@gmail.com",
     "mobile":"1234567890"
- }
+ },
+ {
+  "name":"alex Shaikh",
+  "email":"alexszhang@gmail.com",
+  "mobile":"1234567890"
+},
+{
+  "name":"RVillanueva Shaikh",
+  "email":"RV@gmail.com",
+  "mobile":"1234567890"
+}
 ]
 
 const headingColumnNames = [
