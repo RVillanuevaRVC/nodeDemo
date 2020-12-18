@@ -107,7 +107,7 @@ request("https://www.bullion-rates.com/gold/INR/2007-1-history.htm",
 //https://quotes.sina.com.cn/usstock/hq/cash.php?s=bam&t=annual
 
 
-//code below not working...
+//code below works fine now
 request("https://quotes.sina.com.cn/usstock/hq/cash.php?s=bam&t=annual", 
     (error, response, html) => 
     {
