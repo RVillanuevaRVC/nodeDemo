@@ -1,7 +1,11 @@
 //refer to https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
 
 var express = require('express');
+var cors = require('cors');
 var app = express();
+
+app.use(cors()) ;
+
 
 app.use(express.static('public'));
 var bodyParser = require('body-parser');
@@ -9,15 +13,15 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false }) ;
 
 
-app.get('/', function (req, res) 
+app.get('/', function(req, res) 
 {
    res.send('Hello World');
 }) ;
 
 
-app.get('/index.htm', function (req, res) 
+app.get('/index.html', function (req, res) 
 {
-   res.sendFile( __dirname + "/" + "index.htm" );
+   res.sendFile( __dirname + "/" + "index.html" );
 });
 
 
