@@ -2,7 +2,9 @@ var read = require('node-readability');
 
 var fs = require('fs');
 //http://howtonode.org/really-simple-file-uploads
-read('https://xueqiu.com/6056806984/167047168', function(err, article, meta) 
+//https://xueqiu.com/6056806984/167047168
+//https://mp.weixin.qq.com/s/slmK0OWX-5hqSKx1kyZNiw
+read('https://mp.weixin.qq.com/s/KIJ44DDyt905puV13oAvfg', function(err, article, meta) 
 {
   // Main Article
   console.log(article.content);
