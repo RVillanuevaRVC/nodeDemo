@@ -61,10 +61,11 @@ $() 方法是在DOM中使用过于频繁的 document.getElementById() 方法的�
 //https://slacker.ro/2020/02/09/web-scraping-and-parsing-html-with-node-js-and-cheerio/
 //http://zetcode.com/javascript/cheerio/
 
+/*
 const request= require("request-promise")
 const cheerio= require("cheerio");
 
-/*
+
 //code below works fine with the URI given
 request("https://www.bullion-rates.com/gold/INR/2007-1-history.htm", 
     (error, response, html) => 
@@ -96,7 +97,7 @@ request("https://www.bullion-rates.com/gold/INR/2007-1-history.htm",
         }
     }
 );
-*/
+
 
 
 //yahoo finance Company Profile--cash flow
@@ -159,7 +160,7 @@ request("https://quotes.sina.com.cn/usstock/hq/cash.php?s=bam&t=annual",
 );
 
 
-/*
+
 //https://www.codingwithstefan.com/table-example/
 //https://medium.com/@stefanhyltoft/scraping-html-tables-with-nodejs-request-and-cheerio-e3c6334f661b
 
@@ -195,3 +196,4 @@ request("https://www.codingwithstefan.com/table-example/",
     }
 );
 */
+
