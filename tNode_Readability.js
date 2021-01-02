@@ -4,7 +4,8 @@ var fs = require('fs');
 //http://howtonode.org/really-simple-file-uploads
 //https://xueqiu.com/6056806984/167047168
 //https://mp.weixin.qq.com/s/slmK0OWX-5hqSKx1kyZNiw
-read('https://mp.weixin.qq.com/s/KIJ44DDyt905puV13oAvfg', function(err, article, meta) 
+//https://mp.weixin.qq.com/s/KIJ44DDyt905puV13oAvfg
+read('https://xueqiu.com/6155470785/151508193', function(err, article, meta) 
 {
   // Main Article
   console.log(article.content);
@@ -20,13 +21,13 @@ read('https://mp.weixin.qq.com/s/KIJ44DDyt905puV13oAvfg', function(err, article,
   //console.log(meta);
 
   // Close article to clean up jsdom and prevent leaks
-    var articleName = article.title+'.html' ;
-  fs.writeFile(articleName, article.content, function (err) 
-  {
-    if (err) 
-        throw err;
-    console.log('Saved!');
-  });
+    var articleName = 'xueqiu SA.html';
+    fs.writeFile(articleName, article.content, function (err) 
+    {
+      if (err) 
+          throw err;
+      console.log('Saved!');
+    });
 
-  article.close();
+    article.close();
 });

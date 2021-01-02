@@ -12,12 +12,14 @@ const fs = require('fs');
 const util = require('util');
 // Creates a client
 const client = new textToSpeech.TextToSpeechClient();
-async function quickStart() {
+async function quickStart() 
+{
   // The text to synthesize
   const text = 'hello, world!';
 
   // Construct the request
-  const request = {
+  const request = 
+  {
     input: {text: text},
     // Select the language and SSML voice gender (optional)
     voice: {languageCode: 'en-US', ssmlGender: 'NEUTRAL'},
