@@ -197,6 +197,61 @@ request("https://www.codingwithstefan.com/table-example/",
 );
 */
 
+
+//Below code works fine to merge two html files
+// one is template file with head and style
+//another one is content file 
 //https://morpheusdata.com/cloud-blog/consolidation-how-to-combine-html-content-in-nodejs/
 //try this to merge files
 //manul http://zetcode.com/javascript/cheerio/
+const cheerio= require("cheerio");
+var fs = require('fs');
+
+//fs.readFile(varSrcFile1,)
+const varSrcFile1 = 'c:\\WS\\Demo\\template.html' ;
+
+var varSrcData1 ;
+
+try {
+    varSrcData1 = fs.readFileSync(varSrcFile1, 'utf8') ;
+    console.log(varSrcData1) ;
+ } catch (err) {
+    console.error(err)
+} ;
+
+var varTemplate = cheerio.load(varSrcData1) ;
+
+const varSrcFile2 = 'c:\\WS\\Demo\\content.html' ;
+
+var varSrcData2 ;
+try {
+    varSrcData2 = fs.readFileSync(varSrcFile2, 'utf8') ;
+    console.log(varSrcData2) ;
+ } catch (err) {
+    console.error(err)
+} ;
+
+var varContent = cheerio.load(varSrcData2) ;
+
+
+let articleBody = varTemplate("#ArticleID") ;
+console.log('---------------------> Template') ;
+console.log(articleBody) ;
+
+let articlecontent = varContent("#meArticleBox") ;
+console.log('++++++++++++++++++++++content') ;
+console.log(articlecontent) ;
+
+articleBody.append(articlecontent) ;
+console.log('=============================merged') ;
+console.log(articleBody) ;
+
+
+
+var mergeFileName = 'c:\\WS\\demo\\merged.html' ;
+fs.writeFile(mergeFileName, varTemplate.html(), function (err) 
+{
+  if (err) 
+      throw err;
+  console.log('Saved!');
+});
