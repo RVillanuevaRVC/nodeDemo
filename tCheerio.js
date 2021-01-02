@@ -197,3 +197,6 @@ request("https://www.codingwithstefan.com/table-example/",
 );
 */
 
+//https://morpheusdata.com/cloud-blog/consolidation-how-to-combine-html-content-in-nodejs/
+//try this to merge files
+//manul http://zetcode.com/javascript/cheerio/
