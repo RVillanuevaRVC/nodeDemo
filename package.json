@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "node-read": "^0.1.7",
-    "node-readability": "^3.0.0"
+    "node-readability": "^3.0.0",
+    "puppeteer": "^5.5.0"
   }
 }
