@@ -5,7 +5,7 @@ var fs = require('fs');
 //https://xueqiu.com/6056806984/167047168
 //https://mp.weixin.qq.com/s/slmK0OWX-5hqSKx1kyZNiw
 //https://mp.weixin.qq.com/s/KIJ44DDyt905puV13oAvfg
-read('https://xueqiu.com/6155470785/151508193', function(err, article, meta) 
+read('https://xueqiu.com/4206051491/108258083', function(err, article, meta) 
 {
   // Main Article
   console.log(article.content);
@@ -21,7 +21,7 @@ read('https://xueqiu.com/6155470785/151508193', function(err, article, meta)
   //console.log(meta);
 
   // Close article to clean up jsdom and prevent leaks
-    var articleName = 'xueqiu SA.html';
+    var articleName = article.title+ '.html';
     fs.writeFile(articleName, article.content, function (err) 
     {
       if (err) 
