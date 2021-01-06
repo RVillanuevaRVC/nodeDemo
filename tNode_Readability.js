@@ -10,6 +10,7 @@ var fs = require('fs');
 
 //https://xueqiu.com/4206051491/110796276
 //https://xueqiu.com/4206051491/113469272
+
 //https://xueqiu.com/4206051491/113814823
 //https://xueqiu.com/4206051491/115813656
 //https://xueqiu.com/4206051491/117932140
@@ -59,7 +60,7 @@ var fs = require('fs');
 //https://xueqiu.com/9507152383/125247807
 //
 
-read('https://mp.weixin.qq.com/s?__biz=MzIwMTY1NDg4Nw==&mid=2247490780&idx=1&sn=154bd2c5e2501775e6152f88c010796b&chksm=96ebcbd4a19c42c292eff1a60d6fa96cbf84b471c39cadce51f523aa7809e9e9833fee5607be&scene=21#wechat_redirect', function(err, article, meta) 
+read('https://xueqiu.com/4206051491/113469272', function(err, article, meta) 
 {
   // Main Article
   console.log(article.content);
@@ -75,7 +76,7 @@ read('https://mp.weixin.qq.com/s?__biz=MzIwMTY1NDg4Nw==&mid=2247490780&idx=1&sn=
   //console.log(meta);
 
   // Close article to clean up jsdom and prevent leaks
-    var articleName = /*article.title+ */ 'TXSW.html';
+    var articleName = article.title+ 'BBC.html';
     fs.writeFile(articleName, article.content, function (err) 
     {
       if (err) 
