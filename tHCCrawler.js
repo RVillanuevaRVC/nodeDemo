@@ -13,6 +13,7 @@ const HCCrawler = require('headless-chrome-crawler');
                 console.log(result);
             }),
         });
+        
   // Queue a request
   await crawler.queue('https://example.com/');
   // Queue multiple requests

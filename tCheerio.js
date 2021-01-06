@@ -232,23 +232,25 @@ try {
 } ;
 
 var varContent = cheerio.load(varSrcData2) ;
+console.log(varContent) ;
 
 
 let articleBody = varTemplate("#ArticleID") ;
 console.log('---------------------> Template') ;
 console.log(articleBody) ;
 
-let articlecontent = varContent("#meArticleBox") ;
-console.log('++++++++++++++++++++++content') ;
-console.log(articlecontent) ;
+let articlecontent = varContent(".article__bd__detail") ;
+//console.log('++++++++++++++++++++++content') ;
+//console.log(articlecontent) ;
 
-articleBody.append(articlecontent) ;
-console.log('=============================merged') ;
-console.log(articleBody) ;
+articleBody.append(articlecontent[0]) ;
+//articleBody.append(articlecontent) ;
+//console.log('=============================merged') ;
+//console.log(articleBody) ;
 
 
 
-var mergeFileName = 'c:\\WS\\demo\\merged.html' ;
+var mergeFileName = 'c:\\WS\\demo\\merged-3.html' ;
 fs.writeFile(mergeFileName, varTemplate.html(), function (err) 
 {
   if (err) 
